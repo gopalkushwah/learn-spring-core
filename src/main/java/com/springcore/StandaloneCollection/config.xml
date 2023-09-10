@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd
+		">
+		
+	<util:list list-class="java.util.Vector" id="friendsName">
+		<value>Aman</value>
+		<value>Raman</value>
+		<value>Sohan</value>
+		<value>Gagan</value>
+		<value>Bhuban</value>
+	</util:list>
+	
+	<util:map map-class="java.util.HashMap" id="feestructureMap">
+		<entry key="Java" value="21.131" value-type="double"/>
+		<entry key="Python" value="6564.64" value-type="double"/>
+		<entry key="C" value="664.464" value-type="double"/>
+		<entry key="C++" value="231.6464" value-type="double"/>
+		<entry key="Node" value="998.656" value-type="double"/>
+	</util:map>
+	
+	<util:set set-class="java.util.HashSet" id="mobileSet">
+		<value>9988776655</value>
+		<value>9988776654</value>
+		<value>9988776653</value>
+		<value>9988776652</value>
+		<value>9988776651</value>
+	</util:set>
+	
+	<util:properties id="dbProp">
+		<prop key="dbname">mydb</prop>
+		<prop key="user">root</prop>
+		<prop key="pass">1234</prop>
+		<prop key="url">jdbc:mysql://localhost/mydb</prop>
+	</util:properties>
+	
+	<bean class="com.springcore.StandaloneCollection.Person" name="person1">
+		<property name="friends" ref="friendsName"/>
+		<property name="feestructure" ref="feestructureMap"/>
+		<property name="mobile" ref="mobileSet"/>
+		<property name="dbProp" ref="dbProp"/>
+	</bean>
+	<bean class="com.springcore.StandaloneCollection.Person" name="person2">
+		<property name="friends" ref="friendsName"/>
+		<property name="feestructure" ref="feestructureMap"/>
+		<property name="mobile" ref="mobileSet"/>
+		<property name="dbProp" ref="dbProp"/>
+	</bean>
+
+</beans>
